@@ -1,0 +1,126 @@
+{% load static %}
+
+<html>
+<head>
+{% include 'headeradmin.html' %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<style>
+
+ /*@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+} */
+
+
+
+.prjdiv:hover{
+transform:translateY(-10px)
+}
+div .container1{
+
+
+background-color:lightgrey;
+border-radius:8px;
+}
+h2, h4{
+ padding:10Px;
+}
+
+#Style{
+
+  background-color: #f44336;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+ 
+}
+
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  
+}
+
+
+.button5 {
+  background-color: white;
+  color: black;
+
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+{% include 'nav2admin.html' %}
+<br> &nbsp;&nbsp;Welcome <b style = 'text-transform : capitalize ; color : green ;font-family: "Sofia", sans-serif;'>{{request.user.username}}</b>
+
+
+<div class="container" style = "margin-top:110px">
+  <div id="Style" style = "margin-top:70px">
+<div class = "row">
+<div class = "col-sm-3 mydivstyle" >
+<h2 style = "color : blue ; font-weight : bold ; text-align : center"><button class="button button1">Todays Vehicle Entries</button></h2>
+<h3 class= "mt-3" style = "color : green ; font-weight : bold ; text-align : center">{{tv}} <i class="fa fa-car"></i></h3>
+</div>
+<div class = "col-sm-3 mydivstyle">
+<h2 style = "color : blue ; font-weight : bold ; text-align : center"><button class="button button2">Yesterdays Vehicle Entries</button></h2>
+    <h3 class= "mt-3" style = "color : green ; font-weight : bold ; text-align : center">{{yv}} <i class="fa fa-car"></i></h3>
+</div>
+
+    <div class = "col-sm-3 mydivstyle" >
+<h2 style = "color : blue ; font-weight : bold ; text-align : center"><button class="button button3">Last 7 days vehicle entry</button></h2>
+<h3 class= "mt-3" style = "color : green ; font-weight : bold ; text-align : center">{{ls}} <i class="fa fa-car"></i></h3>
+</div>
+<div class = "col-sm-3 mydivstyle">
+<h2 style = "color : blue ; font-weight : bold ; text-align : center"><button class="button button4">Total vehicle</button></h2>
+    <h3 class= "mt-3" style = "color : green ; font-weight : bold ; text-align : center">{{totalv}} <i class="fa fa-car"></i></h3>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+

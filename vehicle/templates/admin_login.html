@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+<head>
+{% include 'headeradmin.html' %}
+<style>
+
+    .Style{
+
+        background-color: blanchedalmond;
+    }
+    .r{
+        background-color: blueviolet;
+    }
+</style>
+
+</head>
+<body>
+{% include 'nav1admin.html' %}
+
+
+<div class="Container" style = "margin-top:70px">
+<div class="r">
+<h2 class="text-center" style = "font-family : Monotype Corsiva ; color : white">Admin Login</h2>
+</div>
+<div class="form-group">
+<div class="Style">
+<form method = post>
+    {% csrf_token %}
+<label><b>Enter UserName</b></label>
+<input type = text name = "username" class="form-control">
+
+<label><b>Enter Password</b></label>
+<input type = password name = password class="form-control">
+<br>
+<input type = checkbox name = rem> <b>Remember Me</b>
+<br>
+<br>
+<input type = submit name = login value = "Login" class="btn btn-primary form-control" >
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
+{% ifequal error "no" %}
+<script>
+    alert('logged in successfully');
+    window.location=('{% url 'admin_home' %}');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid Login Credentials,Try Again...');
+</script>
+{% endifequal %}
